@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Easiest Way to Encrypt Message - The Blog</title>
+  <meta name="description" content="Presume User B want to pass encrypted message to User A. B must have public key come from A. So A should generat a pair of key, one public key, one private key. There will be 2 step in the below. 1. prepare keys. 2. trans message.
+1. prepare keys I use Alpine in docker. So just run apk add gnupg will install the tool.
+Run command below, and then type in name, email, and others what you want to set.">
+  <meta name="author" content="YesQiao"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "The Blog",
+    
+    "url": "https:\/\/yesqiao.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/yesqiao.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/yesqiao.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/yesqiao.github.io\/posts\/easiest-way-to-encrypt-message\/",
+          "name": "Easiest way to encrypt message"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "YesQiao"
+  },
+  "headline": "Easiest Way to Encrypt Message",
+  "description" : "Presume User B want to pass encrypted message to User A. B must have public key come from A. So A should generat a pair of key, one public key, one private key. There will be 2 step in the below. 1. prepare keys. 2. trans message.\n1. prepare keys I use Alpine in docker. So just run apk add gnupg will install the tool.\nRun command below, and then type in name, email, and others what you want to set.",
+  "inLanguage" : "en",
+  "wordCount":  320 ,
+  "datePublished" : "2019-10-25T15:35:49",
+  "dateModified" : "2019-10-25T15:35:49",
+  "image" : "https:\/\/yesqiao.github.io\/img\/avatar-icon.jpg",
+  "keywords" : [ "easiest, gpg" ],
+  "mainEntityOfPage" : "https:\/\/yesqiao.github.io\/posts\/easiest-way-to-encrypt-message\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/yesqiao.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/yesqiao.github.io\/img\/avatar-icon.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Easiest Way to Encrypt Message" />
+<meta property="og:description" content="Presume User B want to pass encrypted message to User A. B must have public key come from A. So A should generat a pair of key, one public key, one private key. There will be 2 step in the below. 1. prepare keys. 2. trans message.
+1. prepare keys I use Alpine in docker. So just run apk add gnupg will install the tool.
+Run command below, and then type in name, email, and others what you want to set.">
+<meta property="og:image" content="https://yesqiao.github.io/img/avatar-icon.jpg" />
+<meta property="og:url" content="https://yesqiao.github.io/posts/easiest-way-to-encrypt-message/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Blog" />
+
+  <meta name="twitter:title" content="Easiest Way to Encrypt Message" />
+  <meta name="twitter:description" content="Presume User B want to pass encrypted message to User A. B must have public key come from A. So A should generat a pair of key, one public key, one private key. There will be 2 step in the below. 1. …">
+  <meta name="twitter:image" content="https://yesqiao.github.io/img/avatar-icon.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.58.3" />
+  <link rel="alternate" href="https://yesqiao.github.io/index.xml" type="application/rss+xml" title="The Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://yesqiao.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://yesqiao.github.io/css/syntax.css" /><link rel="stylesheet" href="https://yesqiao.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://yesqiao.github.io/">The Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="The Blog" href="https://yesqiao.github.io/">
+            <img class="avatar-img" src="https://yesqiao.github.io/img/avatar-icon.jpg" alt="The Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Easiest Way to Encrypt Message</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>Presume User <code>B</code> want to pass encrypted message to User <code>A</code>.
+<code>B</code> must have <code>public key</code> come from <code>A</code>.
+So <code>A</code> should generat a pair of key, one <code>public key</code>, one <code>private key</code>.
+There will be 2 step in the below. 1. prepare keys. 2. trans message.</p>
+
+<h2 id="1-prepare-keys">1. prepare keys</h2>
+
+<p>I use Alpine in docker. So just run <code>apk add gnupg</code> will install the tool.</p>
+
+<p>Run command below, and then type in <code>name</code>, <code>email</code>, and others what you want to set.
+There should be a <code>Passphrase</code> for using <code>private key</code>.</p>
+
+<pre><code class="language-shell"># A
+gpg --full-generate-key
+</code></pre>
+
+<p>After generating key, you can show all keys and export <code>public key</code> by command below.
+The <code>email</code> is what you typein in the <code>gererating key</code> step.
+<code>--export test1@test.com</code> means will export the publickey come from <code>test1@test.com</code>.
+<code>--armor</code> means will show result in ASCII.
+<code>--output pubkey.gpg</code> means store the result in the file <code>pubkey.gpg</code>.</p>
+
+<pre><code class="language-shell"># A
+gpg --list-keys
+gpg --armor --output pubkey.gpg --export test1@test.com
+# pubkey.gpg
+</code></pre>
+
+<p>Now copy <code>pubkey.gpg</code> to <code>B</code>. And import it in this command.</p>
+
+<pre><code class="language-shell"># B
+gpg --import pubkey.gpg
+gpg --list-keys
+</code></pre>
+
+<h2 id="2-trans-encrypted-message">2. trans encrypted message</h2>
+
+<p>Presume the message stored in file <code>msg.file</code>.
+We can use the command to entrypt it to a new file <code>msg.file.asc</code>.
+<code>-r test1@test.com</code> means the message will be sent to <code>test1@test.com</code>,
+it also mean will use the <code>public key</code> come from <code>test1@test.com</code> to encrypt the message.
+<code>-e msg.file</code> means read the mesage from the file <code>msg.file</code>. If you leave <code>-e</code> with empty value, application will read from stdin. the output will also print to stdout.</p>
+
+<pre><code class="language-shell"># B
+gpg --armor -r test1@test.com -e msg.file
+# echo &quot;hello&quot; | gpg --armor -r test1@test.com -e
+</code></pre>
+
+<p>Use command below to decrypt message at <code>A</code> side. the final message will print to stdout.</p>
+
+<pre><code class="language-shell"># A
+gpg -d msg.file.asc
+# echo $ENCRYPTMSG | gpg -d
+</code></pre>
+
+<p>There is no content talk about store <code>private key</code> for a long time. May be there will be in the future.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://yesqiao.github.io//tags/easiest/">easiest</a>&nbsp;
+            
+              <a href="https://yesqiao.github.io//tags/gpg/">gpg</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/yesqiao" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              YesQiao
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://yesqiao.github.io/">The Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://yesqiao.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://yesqiao.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

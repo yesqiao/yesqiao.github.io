@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Blog</title>
+    <link>https://yesqiao.github.io/</link>
+    <description>Recent content on The Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Oct 2019 15:35:49 +0100</lastBuildDate>
+    
+	<atom:link href="https://yesqiao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Easiest Way to Encrypt Message</title>
+      <link>https://yesqiao.github.io/posts/easiest-way-to-encrypt-message/</link>
+      <pubDate>Fri, 25 Oct 2019 15:35:49 +0100</pubDate>
+      
+      <guid>https://yesqiao.github.io/posts/easiest-way-to-encrypt-message/</guid>
+      <description>Presume User B want to pass encrypted message to User A. B must have public key come from A. So A should generat a pair of key, one public key, one private key. There will be 2 step in the below. 1. prepare keys. 2. trans message.
+1. prepare keys I use Alpine in docker. So just run apk add gnupg will install the tool.
+Run command below, and then type in name, email, and others what you want to set.</description>
+    </item>
+    
+    <item>
+      <title>My First Page</title>
+      <link>https://yesqiao.github.io/page/about/</link>
+      <pubDate>Thu, 24 Oct 2019 13:12:11 +0100</pubDate>
+      
+      <guid>https://yesqiao.github.io/page/about/</guid>
+      <description>whoami</description>
+    </item>
+    
+  </channel>
+</rss>
